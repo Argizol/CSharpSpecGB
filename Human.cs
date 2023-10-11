@@ -74,14 +74,10 @@ namespace CSharpSpecGB
 
         void PrintGenealogicTree()
         {
-            PrintInfo();
-            while (Childs is not null)
+            foreach (var child in Childs)
             {
-                foreach (var child in Childs)
-                {                    
-                    if (child.Childs is not null)
-                        PrintGenealogicTree();
-                }                
+                if (child.Childs is not null)
+                    PrintGenealogicTree();
             }
         }
 
