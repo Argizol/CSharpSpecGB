@@ -20,6 +20,8 @@ namespace CSharpSpecGB
         Human Father;
         Human Mother;
         List<Human> Childs;
+        Human _husband { get; set; }
+        Human _wife { get; set; }
 
         public Human(string name, string surname, Enum sex, DateTime birthday)
         {
@@ -28,6 +30,16 @@ namespace CSharpSpecGB
             Sex = sex.ToString();
             Birthday = birthday;
             Childs = new List<Human>();
+        }
+
+        void AddWife(Human wife)
+        {
+            _wife = wife;
+        }
+
+        void AddHusband(Human husband)
+        {
+            _husband = husband;
         }
 
         void AddChild(Human child)
@@ -74,15 +86,18 @@ namespace CSharpSpecGB
 
         void PrintGenealogicTree()
         {
-
+            PrintInfo();
             if (Childs is not null)
             {
                 foreach (var child in Childs)
                 {
                     if (child.Childs is not null)
+                        if(_husband is not null)
+                            child._husband.PrintInfo();
+                        if(_wife is not null)
+                            child._wife.PrintInfo();
                         PrintGenealogicTree();
                 }
-
             }
         }
 
