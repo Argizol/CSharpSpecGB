@@ -13,8 +13,8 @@ namespace CSharpSpecGB
     }
     internal class Human
     {
-       internal string Name { get; set; }
-       internal string Surname { get; set; }
+        internal string Name { get; set; }
+        internal string Surname { get; set; }
         string Sex;
         DateTime Birthday;
         Human Father;
@@ -37,7 +37,7 @@ namespace CSharpSpecGB
 
         void AddFather(Human father)
         {
-           Father = father;
+            Father = father;
         }
         void AddMother(Human mother)
         {
@@ -69,27 +69,21 @@ namespace CSharpSpecGB
                     Console.WriteLine(child);
                 }
             }
-            
+
         }
 
         void PrintGenealogicTree()
         {
             PrintInfo();
-
-            foreach (var child in Childs)
+            while (Childs is not null)
             {
-                while (Father.Name is not null || Mother.Name is not null)
+                foreach (var child in Childs)
                 {
-                    if (Father is not null)
-                        PrintFather();
-
-                    if (Mother is not null)
-                        PrintMother();
-
-                    PrintGenealogicTree();
+                    if (child.Childs is not null)
+                        PrintInfo();                    
                 }
-            }          
-
+                PrintGenealogicTree();
+            }
         }
 
 
@@ -100,7 +94,7 @@ namespace CSharpSpecGB
                 $" \n Фамилия = {Surname}" +
                 $" \n Пол = {Sex}\n" +
                 $"Дата рождения = {Birthday}";
-                
+
         }
     }
 }
