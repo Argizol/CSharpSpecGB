@@ -76,16 +76,19 @@ namespace CSharpSpecGB
         {
             PrintInfo();
 
-            while (Father.Name is not null || Mother.Name is not null)
+            foreach (var child in Childs)
             {
-                if (Father is not null)
-                    PrintFather();
+                while (Father.Name is not null || Mother.Name is not null)
+                {
+                    if (Father is not null)
+                        PrintFather();
 
-                if (Mother is not null)
-                    PrintMother();
+                    if (Mother is not null)
+                        PrintMother();
 
-                PrintGenealogicTree();
-            }           
+                    PrintGenealogicTree();
+                }
+            }          
 
         }
 
