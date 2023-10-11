@@ -6,19 +6,25 @@ using System.Threading.Tasks;
 
 namespace CSharpSpecGB
 {
+    public enum Sex
+    {
+        male,
+        female
+    }
     internal class Human
     {
         string Name;
         string Surname;
         string Sex;
         DateTime Birthday;
-        List<Human> Relatives;
+        Human Father;
+        Human Mother;
         List<Human> Childs;
-        public Human(string name, string surname, string sex, DateTime birthday)
+        public Human(string name, string surname, Enum sex, DateTime birthday)
         {
             Name = name;
             Surname = surname;
-            Sex = sex;
+            Sex = sex.ToString();
             Birthday = birthday;
         }
     }
