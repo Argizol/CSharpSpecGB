@@ -21,22 +21,33 @@ namespace CSharpSpecGB
         Human Mother;
         List<Human> Childs;
 
-        public Human()
-        {
-        }
-
         public Human(string name, string surname, Enum sex, DateTime birthday)
         {
             Name = name;
             Surname = surname;
             Sex = sex.ToString();
             Birthday = birthday;
+            Childs = new List<Human>();
         }
 
         string PrintFather()
         {
             return $" Отец =\n" +
                 $" {Father} "; 
+        }
+
+        void AddChild(Human child)
+        {
+            Childs.Add(child);
+        }
+
+        void AddFather(Human father)
+        {
+           Father = father;
+        }
+        void AddMother(Human mother)
+        {
+            Mother = mother;
         }
 
         string PrintMother()
