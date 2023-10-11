@@ -13,8 +13,8 @@ namespace CSharpSpecGB
     }
     internal class Human
     {
-        string Name;
-        string Surname;
+       internal string Name { get; set; }
+       internal string Surname { get; set; }
         string Sex;
         DateTime Birthday;
         Human Father;
