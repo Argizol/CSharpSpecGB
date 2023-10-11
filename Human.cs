@@ -35,20 +35,13 @@ namespace CSharpSpecGB
 
         string PrintFather()
         {
-            return $" Отец = " +
-                $"Имя = {Father.Name} \n" +
-                $" Фамилия = {Father.Surname}" +
-                $" \n Пол = {Father.Sex}\n" +
-                $"Дата рождения = {Father.Birthday}"; 
+            return $" Отец =\n" +
+                $" {Father} "; 
         }
 
         string PrintMother()
         {
-            return $" Отец = " +
-                $"Имя = {Mother.Name} \n" +
-                $" Фамилия = {Mother.Surname}" +
-                $" \n Пол = {Mother.Sex}\n" +
-                $"Дата рождения = {Mother.Birthday}";
+            return $" Мать = {Mother}";
         }
 
         void PrintChilds()
