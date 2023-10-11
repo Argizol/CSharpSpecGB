@@ -78,9 +78,8 @@ namespace CSharpSpecGB
             while (Childs is not null)
             {
                 foreach (var child in Childs)
-                {
+                {                    
                     if (child.Childs is not null)
-                        PrintInfo();
                         PrintGenealogicTree();
                 }                
             }
