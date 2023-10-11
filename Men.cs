@@ -9,7 +9,8 @@ namespace CSharpSpecGB
     internal abstract class Men : Human
     {
 
-        public Men(string name, string surname, Enum sex, DateTime birthday) : base()
+        public Men(string name, string surname, Enum sex, DateTime birthday)
+            : base(name, surname, sex, birthday)
         {
 
         }

@@ -10,7 +10,8 @@ namespace CSharpSpecGB
     internal class Woman : Human
     {
 
-        public Woman(string name, string surname, Enum sex, DateTime birthday) : base()
+        public Woman(string name, string surname, Enum sex, DateTime birthday)
+            : base(name, surname, sex, birthday)
         { 
             
         }

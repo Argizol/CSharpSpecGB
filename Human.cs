@@ -30,12 +30,6 @@ namespace CSharpSpecGB
             Childs = new List<Human>();
         }
 
-        string PrintFather()
-        {
-            return $" Отец =\n" +
-                $" {Father} "; 
-        }
-
         void AddChild(Human child)
         {
             Childs.Add(child);
@@ -48,6 +42,17 @@ namespace CSharpSpecGB
         void AddMother(Human mother)
         {
             Mother = mother;
+        }
+
+
+        string PrintInfo()
+        {
+            return $" {this} ";
+        }
+        string PrintFather()
+        {
+            return $" Отец =\n" +
+                $" {Father} ";
         }
 
         string PrintMother()
@@ -66,6 +71,24 @@ namespace CSharpSpecGB
             }
             
         }
+
+        void PrintGenealogicTree()
+        {
+            PrintInfo();
+
+            if (Father.Name is not null || Mother.Name is not null)
+            {
+                if (Father is not null)
+                    PrintFather();
+
+                if (Mother is not null)
+                    PrintMother();
+            }
+            PrintGenealogicTree();
+
+        }
+
+
 
         public override string ToString()
         {
