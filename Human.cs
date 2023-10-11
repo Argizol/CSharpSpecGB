@@ -80,9 +80,10 @@ namespace CSharpSpecGB
                 foreach (var child in Childs)
                 {
                     if (child.Childs is not null)
-                        PrintInfo();                    
+                        PrintInfo();
+                        PrintGenealogicTree();
                 }
-                PrintGenealogicTree();
+                
             }
         }
 
