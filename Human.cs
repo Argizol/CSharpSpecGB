@@ -82,8 +82,7 @@ namespace CSharpSpecGB
                     if (child.Childs is not null)
                         PrintInfo();
                         PrintGenealogicTree();
-                }
-                
+                }                
             }
         }
 
