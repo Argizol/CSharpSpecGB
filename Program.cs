@@ -1,19 +1,26 @@
 using CSharpSpecGB;
+using System.Text;
 
-Bits inte = new (1);
-Bits longe = new(1);
-Bits bytee = new(1);
-long a = 255;
-int b = 12;
-byte c = 31;
+var value = new Bits(7);
 
-inte = a;
-longe = b;
-bytee = c;
+StringBuilder sb = new StringBuilder();
+try
+{
+    for (int i = 0; i < 8; i++)
+    {
+        sb.Append(value.GetBit(i) ? 1 : 0);
+    }
 
-Console.WriteLine(a);
-Console.WriteLine(b);
-Console.WriteLine(c);
+    Console.WriteLine(sb.ToString());
+    Console.WriteLine(value.GetBit(2));
+
+    value.SetBit(false, 2);
+    Console.WriteLine(value.Value);
+}
+catch (Exception ex)
+{
+    Console.WriteLine(ex.Message);
+}
 
 
 
