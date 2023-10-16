@@ -17,3 +17,6 @@ bitByte.PrintBit();
 
 
 
+
+
+
