@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpSpecGB
 {
+    //Реализуйте операторы неявного приведения из long,int,byt в Bits.
     internal class Bits
     {
         byte Value { get; set; }
