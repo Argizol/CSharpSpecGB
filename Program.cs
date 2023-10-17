@@ -1,26 +1,16 @@
 using CSharpSpecGB;
-using System.Text;
 
-var value = new Bits(7);
+int sint = 1234;
+Bits bitInt = sint;
 
-StringBuilder sb = new StringBuilder();
-try
-{
-    for (int i = 0; i < 8; i++)
-    {
-        sb.Append(value.GetBit(i) ? 1 : 0);
-    }
+short sshort = 123;
+Bits bitShort = sshort;
 
-    Console.WriteLine(sb.ToString());
-    Console.WriteLine(value.GetBit(2));
-
-    value.SetBit(false, 2);
-    Console.WriteLine(value.Value);
-}
-catch (Exception ex)
-{
-    Console.WriteLine(ex.Message);
-}
+byte ebyte = 81;
+Bits bitByte = ebyte;
+bitInt.PrintBit();
+bitShort.PrintBit();
+bitByte.PrintBit();
 
 
 

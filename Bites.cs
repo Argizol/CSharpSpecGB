@@ -1,4 +1,6 @@
-﻿namespace CSharpSpecGB
+﻿using System.Text;
+
+namespace CSharpSpecGB
 {
     //Реализуйте операторы неявного приведения из long,int,byt в Bits.
     public class Bits : IBits
@@ -29,11 +31,11 @@
             this.Value = b;
             SizeOfValue = sizeof(long) * 8;
         }
-        public static implicit operator long(Bits b) => b.Value;        
+        public static implicit operator long(Bits b) => b.Value;
         public static implicit operator Bits(int b) => new Bits(b);
         public static implicit operator Bits(byte b) => new Bits(b);
         public static implicit operator Bits(short b) => new Bits(b);
-      
+
 
 
         public bool GetBit(int i)
@@ -56,6 +58,27 @@
                 var mask = (byte)(1 << index);
                 mask = (byte)(0xff ^ mask);
                 Value &= (byte)(Value & mask);
+            }
+        }
+
+        public void PrintBit()
+        {
+            StringBuilder sb = new StringBuilder();
+            try
+            {
+                for (int i = 0; i < 8; i++)
+                {
+                    sb.Append(GetBit(i) ? 1 : 0);
+
+                }
+                sb.ToString().Reverse();
+                Console.WriteLine(sb);
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 
