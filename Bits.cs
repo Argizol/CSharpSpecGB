@@ -35,6 +35,7 @@ namespace CSharpSpecGB
         public static implicit operator Bits(int b) => new Bits(b);
         public static implicit operator Bits(byte b) => new Bits(b);
         public static implicit operator Bits(short b) => new Bits(b);
+        public static implicit operator Bits(long b) => new Bits(b);
 
 
 
