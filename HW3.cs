@@ -21,18 +21,18 @@ namespace CSharpSpecGB
             };
         public static int _counter { get; private set; } = 0;
 
-        public static void HasExit(int startI, int startJ)
+        public static int HasExit(int startI, int startJ)
         {
             if (l[startI, startJ] == 1)
             {
                 Console.WriteLine("Начальная точка находится в стене!");
-                return;
+                return default;
             }
             else if (l[startI, startJ] == 2)
             {
                 _counter++;
                 Console.WriteLine("Выход ниходится на входе 0_о!");
-                return;
+
             }
 
             var stack = new Stack<Tuple<int, int>>();
@@ -50,7 +50,7 @@ namespace CSharpSpecGB
 
                 l[temp.Item1, temp.Item2] = 1;
 
-                if (temp.Item2 >= 0 && l[temp.Item1, temp.Item2 - 1] != 1)
+                if (temp.Item2 > 0 && l[temp.Item1, temp.Item2 - 1] != 1)
                     stack.Push(new(temp.Item1, temp.Item2 - 1)); // вверх
 
                 if (temp.Item2 + 1 < l.GetLength(1) && l[temp.Item1, temp.Item2 + 1] != 1)
@@ -63,7 +63,7 @@ namespace CSharpSpecGB
                     stack.Push(new(temp.Item1 + 1, temp.Item2)); // право
             }
             Console.WriteLine($"Всего выходов {_counter}");
-
+            return _counter;
         }
     }
 }
