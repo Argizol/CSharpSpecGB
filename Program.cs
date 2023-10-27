@@ -11,22 +11,19 @@ class Program()
         calc.handler += SubscribeMyEvent;
         string exitCommand = String.Empty;
         string operation = String.Empty;
-        string command = String.Empty;
-        int num = 0;
+        string command = String.Empty;        
 
         Console.WriteLine("Добро пожаловать в странный калькулятор по странному заданию");
+        Console.WriteLine();
 
         while (true)
-        {
-           
-            Console.WriteLine();
+        {        
 
-            num = calc.EnterNum();
-            calc.SwitchAndExecuteOperation(num);
+            calc.ExecuteOperation();
 
             Console.WriteLine("Продолжить работу?");
-            Console.WriteLine("Для завершения работы введите:" +
-                " Отмена или поставьте пробел и нажмите Enter" +
+            Console.Write("Для завершения работы введите:" +
+                " Отмена или поставьте пробел и нажмите Enter\n" +
                 "Для продолжения работы нажмите Enter");
             exitCommand = Console.ReadLine();
             if (exitCommand.ToLower().Equals("отмена") || exitCommand.ToLower().Equals(" "))

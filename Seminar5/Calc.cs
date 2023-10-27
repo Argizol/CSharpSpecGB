@@ -18,7 +18,7 @@ namespace CSharpSpecGB.Seminar5
             {"-", "Вычитание" },
             {"*", "Умножение" },
             {"/", "Деление" },
-            {"Отменить последнюю", "Отмена последней операции" },
+            {"Галя, отмена!", "Отмена последней операции" },
             };
 
         public void Divide(int x)
@@ -85,8 +85,8 @@ namespace CSharpSpecGB.Seminar5
             Console.Clear();
             return num;
         }
-
-        public void SwitchAndExecuteOperation(int num)
+        
+        public void ExecuteOperation()
         {
             PrintOperations();
             Console.WriteLine("Введите знак математической операции:  ");
@@ -94,21 +94,26 @@ namespace CSharpSpecGB.Seminar5
 
             if (Dict.ContainsKey(operation))
             {
+                int num = 0; 
                 switch (operation)
                 {
                     case "+":
+                        num = EnterNum();
                         Sum(num);
                         break;
                     case "-":
+                        num = EnterNum();
                         Sub(num); ;
                         break;
                     case "/":
+                        num = EnterNum();
                         Divide(num); ;
                         break;
                     case "*":
+                        num = EnterNum();
                         Mult(num); ;
                         break;
-                    case "Отменить последнюю":
+                    case "Галя, отмена!":
                         CancelLast();
                         break;
                 }
