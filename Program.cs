@@ -17,15 +17,16 @@ class Program()
         Console.WriteLine();
 
         while (true)
-        {        
-
+        {     
             calc.ExecuteOperation();
 
             Console.WriteLine("Продолжить работу?");
             Console.Write("Для завершения работы введите:" +
                 " Отмена или поставьте пробел и нажмите Enter\n" +
                 "Для продолжения работы нажмите Enter");
+
             exitCommand = Console.ReadLine();
+
             if (exitCommand.ToLower().Equals("отмена") || exitCommand.ToLower().Equals(" "))
             {
                 Console.WriteLine("Для завершения работы нажмите любую кнопу");
