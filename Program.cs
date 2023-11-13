@@ -1,6 +1,8 @@
-using CSharpSpecGB.Seminar5;
+п»їusing CSharpSpecGB.Seminar5;
+using CSharpSpecGB.seminar6;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Threading.Channels;
 
 class Program()
@@ -11,25 +13,24 @@ class Program()
         calc.handler += SubscribeMyEvent;
         string exitCommand = String.Empty;
         string operation = String.Empty;
-        string command = String.Empty;        
+        string command = String.Empty;
 
-        Console.WriteLine("Добро пожаловать в странный калькулятор по странному заданию");
+        Console.WriteLine("Г„Г®ГЎГ°Г® ГЇГ®Г¦Г Г«Г®ГўГ ГІГј Гў Г±ГІГ°Г Г­Г­Г»Г© ГЄГ Г«ГјГЄГіГ«ГїГІГ®Г° ГЇГ® Г±ГІГ°Г Г­Г­Г®Г¬Гі Г§Г Г¤Г Г­ГЁГѕ");
         Console.WriteLine();
 
         while (true)
-        {     
+        {
+
             calc.ExecuteOperation();
 
-            Console.WriteLine("Продолжить работу?");
-            Console.Write("Для завершения работы введите:" +
-                " Отмена или поставьте пробел и нажмите Enter\n" +
-                "Для продолжения работы нажмите Enter");
-
+            Console.WriteLine("ГЏГ°Г®Г¤Г®Г«Г¦ГЁГІГј Г°Г ГЎГ®ГІГі?");
+            Console.Write("Г„Г«Гї Г§Г ГўГҐГ°ГёГҐГ­ГЁГї Г°Г ГЎГ®ГІГ» ГўГўГҐГ¤ГЁГІГҐ:" +
+                " ГЋГІГ¬ГҐГ­Г  ГЁГ«ГЁ ГЇГ®Г±ГІГ ГўГјГІГҐ ГЇГ°Г®ГЎГҐГ« ГЁ Г­Г Г¦Г¬ГЁГІГҐ Enter\n" +
+                "Г„Г«Гї ГЇГ°Г®Г¤Г®Г«Г¦ГҐГ­ГЁГї Г°Г ГЎГ®ГІГ» Г­Г Г¦Г¬ГЁГІГҐ Enter");
             exitCommand = Console.ReadLine();
-
-            if (exitCommand.ToLower().Equals("отмена") || exitCommand.ToLower().Equals(" "))
+            if (exitCommand.ToLower().Equals("Г®ГІГ¬ГҐГ­Г ") || exitCommand.ToLower().Equals(" "))
             {
-                Console.WriteLine("Для завершения работы нажмите любую кнопу");
+                Console.WriteLine("Г„Г«Гї Г§Г ГўГҐГ°ГёГҐГ­ГЁГї Г°Г ГЎГ®ГІГ» Г­Г Г¦Г¬ГЁГІГҐ Г«ГѕГЎГіГѕ ГЄГ­Г®ГЇГі");
                 Console.ReadKey(true);
                 break;
             }
@@ -40,6 +41,7 @@ class Program()
         if (sender is Calc)
             Console.WriteLine(((Calc)sender)._result);
     }
-}
+}  
+
 
 

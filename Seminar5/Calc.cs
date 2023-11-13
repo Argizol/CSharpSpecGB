@@ -21,30 +21,31 @@ namespace CSharpSpecGB.Seminar5
             {"Галя, отмена!", "Отмена последней операции" },
             };
 
-        public void Divide(int x)
+        public void Divide(double x)
         {
             _result /= x;
             PrintResult();
             _stack.Push(_result);
         }
 
-        public void Mult(int x)
+        public void Mult(double x)
         {
             _result *= x;
             PrintResult();
             _stack.Push(_result);
         }
 
-        public void Sub(int x)
+        public void Sub(double x)
         {
             _result -= x;
+            if(_result < 0) throw new ArithmeticException("Сумма не должна быть меньше 0");
             PrintResult();
             _stack.Push(_result);
         }
 
-        public void Sum(int x)
+        public void Sum(double x)
         {
-            _result += x;
+            _result += x;            
             PrintResult();
             _stack.Push(_result);
         }
@@ -77,15 +78,18 @@ namespace CSharpSpecGB.Seminar5
             }
         }
 
-        public int EnterNum()
+        public double EnterNum()
         {
             Console.WriteLine("Введите число: ");
             var sNum = Console.ReadLine();
-            if (int.TryParse(sNum, out int num)) { }
+            if (MyDoubleTryParse(sNum, out double num))
+            {
+                if (num < 0) throw new ArgumentException("Число не может быть меньше 0");
+            }
             Console.Clear();
             return num;
         }
-        
+
         public void ExecuteOperation()
         {
             PrintOperations();
@@ -94,7 +98,7 @@ namespace CSharpSpecGB.Seminar5
 
             if (Dict.ContainsKey(operation))
             {
-                int num = 0; 
+                double num = 0;
                 switch (operation)
                 {
                     case "+":
@@ -118,6 +122,21 @@ namespace CSharpSpecGB.Seminar5
                         break;
                 }
             }
+        }
+
+        public static bool MyDoubleTryParse(string str, out double num)
+        {
+            try
+            {
+                num = double.Parse(str);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine(e.Message);
+                num = 0;
+                return false;
+            }
+            return true;
         }
     }
 }
