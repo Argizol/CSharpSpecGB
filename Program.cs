@@ -1,6 +1,8 @@
-using CSharpSpecGB.Seminar5;
+п»їusing CSharpSpecGB.Seminar5;
+using CSharpSpecGB.seminar6;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Threading.Channels;
 
 class Program()
@@ -11,24 +13,25 @@ class Program()
         calc.handler += SubscribeMyEvent;
         string exitCommand = String.Empty;
         string operation = String.Empty;
-        string command = String.Empty;        
+        string command = String.Empty;
 
-        Console.WriteLine("Добро пожаловать в странный калькулятор по странному заданию");
+        Console.WriteLine("Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ СЃС‚СЂР°РЅРЅС‹Р№ РєР°Р»СЊРєСѓР»СЏС‚РѕСЂ РїРѕ СЃС‚СЂР°РЅРЅРѕРјСѓ Р·Р°РґР°РЅРёСЋ");
         Console.WriteLine();
 
         while (true)
-        {        
+        {
 
             calc.ExecuteOperation();
 
-            Console.WriteLine("Продолжить работу?");
-            Console.Write("Для завершения работы введите:" +
-                " Отмена или поставьте пробел и нажмите Enter\n" +
-                "Для продолжения работы нажмите Enter");
+
+            Console.WriteLine("РџСЂРѕРґРѕР»Р¶РёС‚СЊ СЂР°Р±РѕС‚Сѓ?");
+            Console.WriteLine("Р”Р»СЏ Р·Р°РІРµСЂС€РµРЅРёСЏ СЂР°Р±РѕС‚С‹ РІРІРµРґРёС‚Рµ:" +
+                " РћС‚РјРµРЅР° РёР»Рё РїРѕСЃС‚Р°РІСЊС‚Рµ РїСЂРѕР±РµР» Рё РЅР°Р¶РјРёС‚Рµ Enter" +
+                "Р”Р»СЏ РїСЂРѕРґРѕР»Р¶РµРЅРёСЏ СЂР°Р±РѕС‚С‹ РЅР°Р¶РјРёС‚Рµ Enter");
             exitCommand = Console.ReadLine();
-            if (exitCommand.ToLower().Equals("отмена") || exitCommand.ToLower().Equals(" "))
+            if (exitCommand.ToLower().Equals("РѕС‚РјРµРЅР°") || exitCommand.ToLower().Equals(" "))
             {
-                Console.WriteLine("Для завершения работы нажмите любую кнопу");
+                Console.WriteLine("Р”Р»СЏ Р·Р°РІРµСЂС€РµРЅРёСЏ СЂР°Р±РѕС‚С‹ РЅР°Р¶РјРёС‚Рµ Р»СЋР±СѓСЋ РєРЅРѕРїСѓ");
                 Console.ReadKey(true);
                 break;
             }
@@ -40,5 +43,6 @@ class Program()
             Console.WriteLine(((Calc)sender)._result);
     }
 }
+
 
 

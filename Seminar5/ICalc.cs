@@ -11,10 +11,10 @@ namespace CSharpSpecGB.Seminar5
         event EventHandler<EventArgs> handler;
         Stack<double> _stack { get; set; }
         double _result { get;  set; }
-        void Sum(int x);
-        void Sub(int x);
-        void Mult(int x);
-        void Divide(int x);
+        void Sum(double x);
+        void Sub(double x);
+        void Mult(double x);
+        void Divide(double x);
 
     }
 }
