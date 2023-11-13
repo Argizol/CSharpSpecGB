@@ -23,14 +23,14 @@ class Program()
 
             calc.ExecuteOperation();
 
-            Console.WriteLine("Ïðîäîëæèòü ðàáîòó?");
-            Console.Write("Äëÿ çàâåðøåíèÿ ðàáîòû ââåäèòå:" +
-                " Îòìåíà èëè ïîñòàâüòå ïðîáåë è íàæìèòå Enter\n" +
-                "Äëÿ ïðîäîëæåíèÿ ðàáîòû íàæìèòå Enter");
+            Console.WriteLine("Продолжить работу?");
+            Console.WriteLine("Для завершения работы введите:" +
+                " Отмена или поставьте пробел и нажмите Enter" +
+                "Для продолжения работы нажмите Enter");
             exitCommand = Console.ReadLine();
-            if (exitCommand.ToLower().Equals("îòìåíà") || exitCommand.ToLower().Equals(" "))
+            if (exitCommand.ToLower().Equals("отмена") || exitCommand.ToLower().Equals(" "))
             {
-                Console.WriteLine("Äëÿ çàâåðøåíèÿ ðàáîòû íàæìèòå ëþáóþ êíîïó");
+                Console.WriteLine("Для завершения работы нажмите любую кнопу");
                 Console.ReadKey(true);
                 break;
             }
