@@ -15,13 +15,14 @@ class Program()
         string operation = String.Empty;
         string command = String.Empty;
 
-        Console.WriteLine("Äîáðî ïîæàëîâàòü â ñòðàííûé êàëüêóëÿòîð ïî ñòðàííîìó çàäàíèþ");
+        Console.WriteLine("Добро пожаловать в странный калькулятор по странному заданию");
         Console.WriteLine();
 
         while (true)
         {
 
             calc.ExecuteOperation();
+
 
             Console.WriteLine("Продолжить работу?");
             Console.WriteLine("Для завершения работы введите:" +
@@ -41,7 +42,7 @@ class Program()
         if (sender is Calc)
             Console.WriteLine(((Calc)sender)._result);
     }
-}  
+}
 
 
 

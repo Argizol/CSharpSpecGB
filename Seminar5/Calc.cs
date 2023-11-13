@@ -102,19 +102,55 @@ namespace CSharpSpecGB.Seminar5
                 switch (operation)
                 {
                     case "+":
-                        num = EnterNum();
-                        Sum(num);
+                        try
+                        {
+                            num = EnterNum();
+                        }
+                        catch(ArgumentException e)
+                        {
+                            Console.WriteLine(e); 
+                        }
+                        
+                        try
+                        {
+                            Sum(num);
+                        }
+                        catch (ArithmeticException ex)
+                        {
+                            Console.WriteLine(ex);
+                        }
                         break;
                     case "-":
-                        num = EnterNum();
+                        try
+                        {
+                            num = EnterNum();
+                        }
+                        catch (ArgumentException e)
+                        {
+                            Console.WriteLine(e);
+                        }
                         Sub(num); ;
                         break;
                     case "/":
-                        num = EnterNum();
+                        try
+                        {
+                            num = EnterNum();
+                        }
+                        catch (ArgumentException e)
+                        {
+                            Console.WriteLine(e);
+                        }
                         Divide(num); ;
                         break;
                     case "*":
-                        num = EnterNum();
+                        try
+                        {
+                            num = EnterNum();
+                        }
+                        catch (ArgumentException e)
+                        {
+                            Console.WriteLine(e);
+                        }
                         Mult(num); ;
                         break;
                     case "Галя, отмена!":
