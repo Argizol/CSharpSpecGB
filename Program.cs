@@ -15,7 +15,7 @@ class Program()
         string operation = String.Empty;
         string command = String.Empty;
 
-        Console.WriteLine("����� ���������� � �������� ����������� �� ��������� �������");
+        Console.WriteLine("Добро пожаловать в странный калькулятор по странному заданию");
         Console.WriteLine();
 
         while (true)
@@ -24,14 +24,15 @@ class Program()
             calc.ExecuteOperation();
 
 
-            Console.WriteLine("���������� ������?");
-            Console.WriteLine("��� ���������� ������ �������:" +
-                " ������ ��� ��������� ������ � ������� Enter" +
-                "��� ����������� ������ ������� Enter");
+            Console.WriteLine("Продолжить работу?");
+            Console.WriteLine("Для завершения работы введите:" +
+                " Отмена или поставьте пробел и нажмите Enter" +
+                "Для продолжения работы нажмите Enter");
             exitCommand = Console.ReadLine();
-            if (exitCommand.ToLower().Equals("������") || exitCommand.ToLower().Equals(" "))
+            if (exitCommand.ToLower().Equals("отмена") || exitCommand.ToLower().Equals(" "))
+
             {
-                Console.WriteLine("��� ���������� ������ ������� ����� �����");
+                Console.WriteLine("Для завершения работы нажмите любую кнопу");
                 Console.ReadKey(true);
                 break;
             }
