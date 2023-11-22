@@ -10,8 +10,8 @@ class Program()
 {
     static void Main(string[] args)
     {
-        string path = @"C:\Users\argiz\source\repos\CSharpSpecGB";
-        foreach(var file in HW8.SerchFilesByExtension(path))
+        string path = "../../../"; 
+        foreach (var file in HW8.SerchFilesByExtension(path))
         {
             Console.WriteLine(file);
         }
