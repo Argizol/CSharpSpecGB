@@ -16,6 +16,9 @@ class Program()
             Console.WriteLine(file);
         }
 
+        Console.WriteLine();
+
+        HW8.SerchTextInFiles(HW8.SerchFilesByExtension(path), "HW.8");
     }    
 }
 
