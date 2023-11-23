@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C_2._0
+namespace Seminar7
 {
     internal class TestClass
     {

@@ -5,7 +5,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace C_2._0
+namespace Seminar7
 {
     internal class Reflection
     {
