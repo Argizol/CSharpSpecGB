@@ -1,9 +1,4 @@
-
-using CSharpSpecGB.Seminar5;
 using Seminar7;
-using System;
-using System.Collections.Generic;
-using System.Threading.Channels;
 
 class Program()
 {
@@ -12,6 +7,8 @@ class Program()
         Reflection reflection = new();
         reflection.Run(args);
     }   
+
 }
+
 
 
