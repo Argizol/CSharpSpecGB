@@ -2,6 +2,7 @@ using Newtonsoft.Json;
 using Seminar7;
 using System.Diagnostics;
 using System.IO;
+using System.Text;
 using System.Xml.Linq;
 
 class Program()
@@ -23,19 +24,22 @@ class Program()
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 //Get the path of specified file
-                path = Path.Combine(openFileDialog.ToString());
-                
+                path = Path.Combine(openFileDialog.FileName);
+                using(StreamReader sr = new StreamReader(path))
+                {
+                    StringBuilder sb = new StringBuilder();
+                    while(!sr.EndOfStream)
+                    {
+                        var line = sr.ReadLine();
+                        sb.Append(line);
+                    }
+                    XNode? node = JsonConvert.DeserializeXNode(sb.ToString(),"Root");
+                    Console.WriteLine(node?.ToString());
+                }
             }
         }
+        
 
-        using (StreamReader sr = new StreamReader(path)) 
-        {
-            sr.ReadToEnd();
-            XNode? node = JsonConvert.DeserializeXNode(sr.ReadToEnd());
-            Console.WriteLine(node?.ToString());
-        }
-        
-        
     } 
 }
 
