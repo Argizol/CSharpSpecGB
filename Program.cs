@@ -16,7 +16,7 @@ class Program()
         string path = string.Empty;
         using (OpenFileDialog openFileDialog = new OpenFileDialog())
         {
-            openFileDialog.InitialDirectory = @"Seminar9";
+            openFileDialog.InitialDirectory = @"C:\";
             openFileDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
             openFileDialog.FilterIndex = 2;
             openFileDialog.RestoreDirectory = true;
