@@ -25,22 +25,20 @@ class Program()
             {
                 //Get the path of specified file
                 path = Path.Combine(openFileDialog.FileName);
-                using(StreamReader sr = new StreamReader(path))
+                using (StreamReader sr = new StreamReader(path))
                 {
                     StringBuilder sb = new StringBuilder();
-                    while(!sr.EndOfStream)
+                    while (!sr.EndOfStream)
                     {
                         var line = sr.ReadLine();
                         sb.Append(line);
                     }
-                    XNode? node = JsonConvert.DeserializeXNode(sb.ToString(),"Root");
+                    XNode? node = JsonConvert.DeserializeXNode(sb.ToString(), "Root");
                     Console.WriteLine(node?.ToString());
                 }
             }
         }
-        
-
-    } 
+    }
 }
 
 
